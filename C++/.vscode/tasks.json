@@ -1,0 +1,28 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build",
+      "type": "shell",
+      "command": "cl.exe",
+      "args": [
+        "/EHsc",
+        "/I",
+        "C:/opencv/build/include",
+        "/I",
+        "C:/pthreads/include",
+        "deepface_stream.c",
+        "/link",
+        "/LIBPATH:C:/opencv/build/x64/vc15/lib",
+        "/LIBPATH:C:/pthreads/lib/x64",
+        "opencv_world460.lib",
+        "pthreadVC2.lib"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$msCompile"]
+    }
+  ]
+}
