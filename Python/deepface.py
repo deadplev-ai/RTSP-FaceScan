@@ -27,7 +27,8 @@ if physical_devices:
 # Variables Config
 FRAME_WIDTH = 1280
 FRAME_HEIGHT = 720
-TOTAL_COUNT = 3
+TOTAL_COUNT = 3 # Analyse every X Frames
+rtsp_url = "rtsp://root:vvtk1234@192.168.3.206:554/live1s1.sdp?tcp&buffer_size=4096"
 
 # Load OpenCV's pre-trained face detector
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
@@ -126,7 +127,6 @@ root = tk.Tk()
 root.title("DeepFace RTSP Stream (Vivotek)")
 root.geometry(f"{FRAME_WIDTH}x{FRAME_HEIGHT}")
 
-rtsp_url = "rtsp://root:vvtk1234@192.168.3.206:554/live1s1.sdp?tcp&buffer_size=4096"
 cap_viewer = cv2.VideoCapture(rtsp_url)
 cap_analysis = cv2.VideoCapture(rtsp_url)
 
